@@ -1,0 +1,14 @@
+.form {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.inputField {
+    flex: 2;
+}
+
+.btn {
+    flex: 1
+}
