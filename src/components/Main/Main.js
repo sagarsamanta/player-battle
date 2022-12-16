@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import SideBar from "./SideBar";
-
 function Main() {
   return (
     <div className="main_container" style={{ position: "absolute" }}>
@@ -13,14 +12,13 @@ function Main() {
         style={{
           overflowY: "scroll",
           position: "relative",
-          left: "8%",
+          left: "9%",
         }}
       >
-        <div style={{ position: "" }}>
-          <Navbar />
-        </div>
         <div className="routes">
-          <Outlet />
+          <div style={{ marginTop: "0rem" }}>
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

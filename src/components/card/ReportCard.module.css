@@ -1,0 +1,20 @@
+.container {
+    width: 25%;
+    min-height: 100px;
+    padding: 1rem;
+    
+}
+.container:hover{
+    transform: scale3d(1.05, 1.05, 1)
+}
+.root{
+    display: flex;
+    justify-content: space-between;
+}
+.amount{
+    font-size: 2rem;
+}
+.img{
+    height: 3em;
+    margin-top: -10px;
+}

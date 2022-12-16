@@ -15,7 +15,7 @@ const SideBar = () => {
         <img src={logo} alt="" />
         COMPANY
       </div>
-      <Divider style={{marginTop:'1rem', marginBottom:'-2rem'}} light />
+      <Divider style={{ marginTop: "1rem", marginBottom: "-2rem" }} light />
       <div className="lower">
         <ul>
           <li>

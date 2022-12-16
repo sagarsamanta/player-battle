@@ -1,0 +1,11 @@
+.wrapper{
+    display: flex;
+    gap: 20px;
+    margin-top: 1rem;
+}
+.banBtn{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    margin-right: 1rem;
+}

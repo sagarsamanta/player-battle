@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 .sidebar{
-  width: 15%;
+  width: 16%;
   height: 100%;
   background-color: #252A36;
   padding: 1rem;
@@ -74,9 +74,13 @@ ul{
   gap: 15px;
 }
 .navLink.active{
-  background-color: #A2A1FF;
+  background-color: #a2a1ff26;
   color: white !important;
-  transition: all 400ms ease-in;
+  /* transition: all 400ms ease-in; */
+}
+.navLink:hover{
+  background-color: #a2a1ff26;
+  
 }
 .navLink{
   padding: 0.5rem;
