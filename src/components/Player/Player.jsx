@@ -11,116 +11,7 @@ import { Button, IconButton, Tooltip } from "@mui/material";
 import BlockIcon from "@mui/icons-material/Block";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Switch from "@mui/material/Switch";
-const columns = [
-  {
-    field: "id",
-    headerName: "ID",
-    width: 90,
-    headerAlign: "center",
-    align: "center",
-  },
-
-  {
-    field: "firstName",
-    headerAlign: "center",
-    align: "center",
-    headerName: "First name",
-    width: 150,
-  },
-  {
-    field: "lastName",
-    headerAlign: "center",
-    align: "center",
-    headerName: "Last name",
-    width: 150,
-  },
-
-  {
-    field: "age",
-    headerAlign: "center",
-    align: "center",
-    headerName: "Age",
-    type: "number",
-    width: 110,
-  },
-  {
-    field: "2",
-    headerAlign: "center",
-    align: "center",
-    headerName: "STATUS",
-    sortable: false,
-    filterable: false,
-    disableExport: true,
-    width: 150,
-    renderCell: (cellValues) => {
-      return (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "10px",
-          }}
-        >
-          <Tooltip title="Change Status">
-            <Switch
-              checked={true}
-              // onChange={() => setLoading(!loading)}
-              name="loading"
-              color="primary"
-            />
-          </Tooltip>
-        </div>
-      );
-    },
-  },
-
-  {
-    field: "1",
-    headerAlign: "center",
-    align: "center",
-    headerName: "ACTIONS",
-    sortable: false,
-    filterable: false,
-    disableExport: true,
-    width: 150,
-    renderCell: (cellValues) => {
-      return (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "10px",
-          }}
-        >
-          <IconButton
-            aria-label="view"
-            style={{ outline: "none" }}
-            onClick={(event) => {
-              // handleViewCustomer(cellValues.row);
-            }}
-          >
-            <Tooltip title="View">
-              <VisibilityIcon color="success" />
-            </Tooltip>
-          </IconButton>
-          <IconButton
-            aria-label="view"
-            style={{ outline: "none" }}
-            onClick={(event) => {
-              // handleViewCustomer(cellValues.row);
-            }}
-          >
-            <Tooltip title="Ban">
-              <BlockIcon color="error" />
-            </Tooltip>
-          </IconButton>
-        </div>
-      );
-    },
-  },
-];
+import { useNavigate } from "react-router-dom";
 
 const rows = [
   { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
@@ -135,10 +26,138 @@ const rows = [
 ];
 
 export default function Player() {
+  const navigate = useNavigate();
+  const columns = [
+    {
+      field: "id",
+      headerName: "ID",
+      width: 90,
+      headerAlign: "center",
+      align: "center",
+    },
+
+    {
+      field: "firstName",
+      headerAlign: "center",
+      align: "center",
+      headerName: "First name",
+      width: 150,
+    },
+    {
+      field: "lastName",
+      headerAlign: "center",
+      align: "center",
+      headerName: "Last name",
+      width: 150,
+    },
+
+    {
+      field: "age",
+      headerAlign: "center",
+      align: "center",
+      headerName: "Age",
+      type: "number",
+      width: 110,
+    },
+    {
+      field: "age",
+      headerAlign: "center",
+      align: "center",
+      headerName: "Age",
+      type: "number",
+      width: 110,
+    },{
+      field: "age",
+      headerAlign: "center",
+      align: "center",
+      headerName: "Age",
+      type: "number",
+      width: 110,
+    },
+    {
+      field: "2",
+      headerAlign: "center",
+      align: "center",
+      headerName: "STATUS",
+      sortable: false,
+      filterable: false,
+      disableExport: true,
+      width: 150,
+      renderCell: (cellValues) => {
+        return (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            <Tooltip title="Change Status">
+              <Switch
+                checked={true}
+                // onChange={() => setLoading(!loading)}
+                name="loading"
+                color="primary"
+              />
+            </Tooltip>
+          </div>
+        );
+      },
+    },
+
+    {
+      field: "1",
+      headerAlign: "center",
+      align: "center",
+      headerName: "ACTIONS",
+      sortable: false,
+      filterable: false,
+      disableExport: true,
+      width: 150,
+      renderCell: (cellValues) => {
+        return (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            <IconButton
+              aria-label="view"
+              style={{ outline: "none" }}
+              onClick={(event) => {
+                event.preventDefault();
+                const id = cellValues?.row.id;
+                navigate(`/Player/${id}`);
+              }}
+            >
+              <Tooltip title="View">
+                <VisibilityIcon color="success" />
+              </Tooltip>
+            </IconButton>
+            <IconButton
+              aria-label="view"
+              style={{ outline: "none" }}
+              onClick={(event) => {
+                // handleViewCustomer(cellValues.row);
+              }}
+            >
+              <Tooltip title="Ban">
+                <BlockIcon color="error" />
+              </Tooltip>
+            </IconButton>
+          </div>
+        );
+      },
+    },
+  ];
   const [selectedPlayers, setSelectedPlayers] = useState([]);
   const handleCheckboxSelection = (id) => {
-    console.log(id)
-    setSelectedPlayers(id)
+    console.log(id);
+    setSelectedPlayers(id);
   };
   return (
     <>

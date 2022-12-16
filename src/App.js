@@ -9,6 +9,7 @@ import Signup from "./components/Signup/Signup";
 import GameFunctionality from "./components/GameFunctionality/GameFunctionality";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import Profile from "./components/PlayerProfile/Profile";
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -26,8 +27,12 @@ const App = () => {
             <Route element={<Main />}>
               <Route path="/gameMode" element={<Home />} />
               <Route path="/tournament" element={<Tournament />} />
-              <Route path="/gameFunctionality" element={<GameFunctionality />} />
+              <Route
+                path="/gameFunctionality"
+                element={<GameFunctionality />}
+              />
               <Route path="/Player" element={<Player />} />
+              <Route path="/Player/:id" element={<Profile />} />
             </Route>
           </Routes>
         </Router>

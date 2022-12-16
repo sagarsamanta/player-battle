@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import logo from "../../asset/logo.png";
 
 import { FaHome, FaRegChartBar, FaVideo, FaThList, FaTv } from "react-icons/fa";
-import { Divider } from "@mui/material";
+import { Button, Divider } from "@mui/material";
 const SideBar = () => {
   return (
     <div
@@ -16,7 +16,7 @@ const SideBar = () => {
         COMPANY
       </div>
       <Divider style={{ marginTop: "1rem", marginBottom: "-2rem" }} light />
-      <div className="lower">
+      <div className="lower" style={{display:'flex',flexDirection:'column',gap:'3rem'}}>
         <ul>
           <li>
             <NavLink
@@ -66,7 +66,13 @@ const SideBar = () => {
             </NavLink>
           </li>
         </ul>
+        <NavLink className="" to="/signup" style={{ textDecoration: "none" }}>
+        <Button size="small" fullWidth variant="outlined" type="submit">
+          Register Player
+        </Button>
+      </NavLink>
       </div>
+      
     </div>
   );
 };

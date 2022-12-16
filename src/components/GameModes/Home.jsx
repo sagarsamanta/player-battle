@@ -3,7 +3,7 @@ import img1 from "../../asset/r1.png";
 import img2 from "../../asset/r2.png";
 import img3 from "../../asset/r3.png";
 import Card from "../card/Card";
-import Navbar from "../Navbar/Navbar";
+// import Navbar from "../Navbar/Navbar";
 import TopBar from "../TopBar/TopBar";
 import classes from "./Home.module.css";
 
@@ -12,7 +12,7 @@ function Home() {
     <>
       <TopBar title={"GAMING MODES"} />
       <div className={classes.fixedBtn}>
-        <Navbar />
+        {/* <Navbar /> */}
       </div>
       <div className="home" style={{}}>
         <div className="upper_row">

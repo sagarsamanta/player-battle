@@ -9,7 +9,7 @@ import ModeEditOutlineTwoToneIcon from "@mui/icons-material/ModeEditOutlineTwoTo
 import CloseTwoToneIcon from "@mui/icons-material/CloseTwoTone";
 import Tooltip from "@mui/material/Tooltip";
 import Grid from "@mui/material/Grid";
-import SendIcon from '@mui/icons-material/Send';
+// import SendIcon from '@mui/icons-material/Send';
 const validationSchema = yup.object({
   inputVal: yup
     .number()
@@ -66,7 +66,7 @@ const Form = ({ title }) => {
             size="small"
             style={{ height: "2.4rem" }}
             fullWidth
-            endIcon={<SendIcon/>}
+            // endIcon={<SendIcon/>}
             variant="outlined"
             type="submit"
             disabled={!formik.dirty || editable}
@@ -75,7 +75,7 @@ const Form = ({ title }) => {
               formik.handleSubmit();
             }}
           >
-            Submit
+            Send
           </Button>
         </Grid>
         <Grid item xs={2}>
